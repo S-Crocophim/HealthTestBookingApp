@@ -66,12 +66,13 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 5,
         shadowColor: Colors.grey,
-        title: Text('DigiDiagnose',
+        title: Text(
+          'DigiDiagnose',
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.w500,
             letterSpacing: 1,
-        ),
+          ),
         ),
       ),
       drawer: Drawer(
@@ -92,7 +93,8 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 40,
-                        backgroundImage: NetworkImage(authProvider.userModel.profilePic ?? ""),
+                        backgroundImage: NetworkImage(
+                            authProvider.userModel.profilePic ?? ""),
                       ),
                       SizedBox(width: 16),
                       Column(
@@ -100,7 +102,9 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            authProvider.isSignedIn ? authProvider.userModel.name ?? "" : "Guest User",
+                            authProvider.isSignedIn
+                                ? authProvider.userModel.name ?? ""
+                                : "Guest User",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 18,
@@ -108,7 +112,9 @@ class HomeScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            authProvider.isSignedIn ? authProvider.userModel.phoneNumber ?? "" : "",
+                            authProvider.isSignedIn
+                                ? authProvider.userModel.phoneNumber ?? ""
+                                : "",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
@@ -116,7 +122,9 @@ class HomeScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            authProvider.isSignedIn ? authProvider.userModel.email ?? "" : "",
+                            authProvider.isSignedIn
+                                ? authProvider.userModel.email ?? ""
+                                : "",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12,
@@ -133,12 +141,16 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Icon(Icons.home),
-                      SizedBox(width: 8,),
-                      Text('Home',
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Home',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                   onTap: () {
@@ -155,12 +167,16 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Icon(Icons.search_rounded),
-                      SizedBox(width: 8,),
-                      Text('Search',
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Search',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                   onTap: () {
@@ -177,12 +193,16 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Icon(Icons.book_rounded),
-                      SizedBox(width: 8,),
-                      Text('Blogs',
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Blogs',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                   onTap: () {
@@ -199,12 +219,16 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Icon(Icons.calendar_month_outlined),
-                      SizedBox(width: 8,),
-                      Text('Bookings',
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Bookings',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                   onTap: () {
@@ -221,12 +245,16 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Icon(Icons.percent_sharp),
-                      SizedBox(width: 8,),
-                      Text('Offers',
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Offers',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                   onTap: () {
@@ -243,12 +271,16 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Icon(Icons.person),
-                      SizedBox(width: 8,),
-                      Text('Profile',
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Profile',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                   onTap: () {
@@ -265,12 +297,16 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Icon(Icons.contact_phone),
-                      SizedBox(width: 8,),
-                      Text('Contact Us',
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Contact Us',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                   onTap: () {
@@ -409,17 +445,21 @@ class HomeScreen extends StatelessWidget {
                           // Add action to "See All" button
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => AllTestsScreen()),
+                            MaterialPageRoute(
+                                builder: (context) => AllTestsScreen()),
                           );
                         },
                         style: ButtonStyle(
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          backgroundColor: MaterialStateProperty.all(Color(0xFF3E69FE)),
-                          foregroundColor: MaterialStateProperty.all(Colors.white),
+                          backgroundColor:
+                              MaterialStateProperty.all(Color(0xFF3E69FE)),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.white),
                           elevation: MaterialStateProperty.all(5),
                         ),
                         child: Row(
@@ -440,11 +480,14 @@ class HomeScreen extends StatelessWidget {
                   FutureBuilder<List<TestModel>>(
                     future: authProvider.fetchTests(),
                     builder: (context, testSnapshot) {
-                      if (testSnapshot.connectionState == ConnectionState.waiting) {
+                      if (testSnapshot.connectionState ==
+                          ConnectionState.waiting) {
                         return Center(child: CircularProgressIndicator());
                       } else if (testSnapshot.hasError) {
-                        return Center(child: Text("Error: ${testSnapshot.error}"));
-                      } else if (!testSnapshot.hasData || testSnapshot.data!.isEmpty) {
+                        return Center(
+                            child: Text("Error: ${testSnapshot.error}"));
+                      } else if (!testSnapshot.hasData ||
+                          testSnapshot.data!.isEmpty) {
                         return Center(child: Text("No tests available."));
                       } else {
                         List<TestModel> tests = testSnapshot.data!;
@@ -455,7 +498,8 @@ class HomeScreen extends StatelessWidget {
                             keepScrollOffset: false,
                           ),
                           padding: EdgeInsets.only(top: 10.0),
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3, // 3 items per row
                             mainAxisSpacing: 10.0, // Add vertical spacing
                             crossAxisSpacing: 10.0, // Add horizontal spacing
@@ -467,9 +511,11 @@ class HomeScreen extends StatelessWidget {
                                 // Add your logic here when a test is pressed
                                 print('Test pressed: ${tests[index].name}');
                                 Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => TestDetailsScreen(test: tests[index])
-                                ));},
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => TestDetailsScreen(
+                                            test: tests[index])));
+                              },
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Color(0xFF3E69FE),
@@ -510,7 +556,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-
             SizedBox(height: 10),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
@@ -531,7 +576,8 @@ class HomeScreen extends StatelessWidget {
                           // Add action to "See All" button
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => AllLabsScreen()),
+                            MaterialPageRoute(
+                                builder: (context) => AllLabsScreen()),
                           );
                         },
                         style: ButtonStyle(

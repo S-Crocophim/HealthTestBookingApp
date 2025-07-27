@@ -23,7 +23,6 @@ class _AdminScreenState extends State<AdminScreen> {
   final testDescriptionController = TextEditingController();
   final testPriceController = TextEditingController();
 
-
   @override
   void dispose() {
     super.dispose();
@@ -58,7 +57,8 @@ class _AdminScreenState extends State<AdminScreen> {
               ),
               TextField(
                 controller: labTestsController,
-                decoration: InputDecoration(labelText: 'Lab Tests (comma-separated)'),
+                decoration:
+                    InputDecoration(labelText: 'Lab Tests (comma-separated)'),
               ),
               TextField(
                 controller: labTimingsController,
@@ -94,6 +94,7 @@ class _AdminScreenState extends State<AdminScreen> {
       ),
     );
   }
+
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
   void addTest() async {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
@@ -110,7 +111,10 @@ class _AdminScreenState extends State<AdminScreen> {
 
       // Add the test to each lab
       TestModel test = TestModel(
-        id: _firebaseFirestore.collection('services').doc().id, // You might want to generate a unique ID here
+        id: _firebaseFirestore
+            .collection('services')
+            .doc()
+            .id, // You might want to generate a unique ID here
         labIds: labIds,
         name: testName,
         description: testDescriptionController.text.trim(),
@@ -129,12 +133,12 @@ class _AdminScreenState extends State<AdminScreen> {
     }
   }
 
-
   void addLab() {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
 
     // Extracting tests from the comma-separated string
-    List<LabTestModel> testsList = labTestsController.text.split(',').map((test) {
+    List<LabTestModel> testsList =
+        labTestsController.text.split(',').map((test) {
       var parts = test.split(':');
       return LabTestModel(
           testName: parts[0].trim(), testPrice: double.parse(parts[1].trim()));

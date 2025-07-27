@@ -88,11 +88,15 @@ class AllLabsScreen extends StatelessWidget {
                                 // Handle booking button click
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => LabDetailPage(lab: lab,authProvider: AuthProvider(),)),
+                                  MaterialPageRoute(
+                                      builder: (context) => LabDetailPage(
+                                            lab: lab,
+                                            authProvider: AuthProvider(),
+                                          )),
                                 );
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Color(0xFF3E69FE),
+                                backgroundColor: Color(0xFF3E69FE),
                               ),
                               child: Text("Book Now"),
                             ),

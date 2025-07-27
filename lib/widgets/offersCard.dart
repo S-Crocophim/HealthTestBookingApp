@@ -76,7 +76,8 @@ class OffersCard extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.local_offer,
-                          color: Colors.amber, // You can choose the appropriate color
+                          color: Colors
+                              .amber, // You can choose the appropriate color
                           size: 16,
                         ),
                         SizedBox(width: 4),
@@ -112,40 +113,40 @@ class OffersCard extends StatelessWidget {
             ),
             SizedBox(height: 10), // Add spacing between the content and buttons
             Divider(), // Add a divider for better separation
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {
-                  // Add logic for reviewing the booking
-                },
-                style: ElevatedButton.styleFrom(primary: Color(0xFF3E69FE)),
-                child: Text(
-                  'Contact Lab',
-                  style: TextStyle(color: Colors.white),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Add logic for reviewing the booking
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF3E69FE)),
+                  child: Text(
+                    'Contact Lab',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            Container(
-              width: 16.0, // Adjust the space between buttons
-            ),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {
-                  // Add logic for rescheduling the booking
-                  Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BookingScreen()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(primary: Color(0xFF3E69FE)),
-                child: Text(
-                  'Make Booking',
-                  style: TextStyle(color: Colors.white),
+              Container(
+                width: 16.0, // Adjust the space between buttons
+              ),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Add logic for rescheduling the booking
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BookingScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF3E69FE)),
+                  child: Text(
+                    'Make Booking',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
-            ),
             ]),
           ],
         ),

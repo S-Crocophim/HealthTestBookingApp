@@ -105,7 +105,8 @@ class CartScreen extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 // Assuming you have a function to process the payment
-                bool paymentSuccessful = processPayment(cartProvider.getTotalAmount());
+                bool paymentSuccessful =
+                    processPayment(cartProvider.getTotalAmount());
 
                 if (paymentSuccessful) {
                   // Show a success message or navigate to a success screen
@@ -120,7 +121,6 @@ class CartScreen extends StatelessWidget {
               },
               child: Text('Proceed to Payment'),
             ),
-
           ),
           SizedBox(height: 8),
         ],
@@ -128,7 +128,6 @@ class CartScreen extends StatelessWidget {
     );
   }
 }
-
 
 bool processPayment(double totalAmount) {
   // Replace this with your actual payment processing logic
@@ -163,7 +162,8 @@ void showErrorDialog(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         title: Text('Payment Error'),
-        content: Text('There was an error processing your payment. Please try again.'),
+        content: Text(
+            'There was an error processing your payment. Please try again.'),
         actions: [
           TextButton(
             onPressed: () {

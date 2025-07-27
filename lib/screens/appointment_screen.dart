@@ -3,13 +3,14 @@ import 'package:provider/provider.dart';
 import '../provider/auth_provider.dart';
 import '../model/booking_model.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 class AllBookingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('All Bookings',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
       ),
       body: Consumer<AuthProvider>(
         builder: (context, authProvider, child) {
@@ -48,7 +49,6 @@ class BookingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -187,7 +187,8 @@ class BookingCard extends StatelessWidget {
                             },
                           );
                         },
-                        style: ElevatedButton.styleFrom(primary: Color(0xFF3E69FE)),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFF3E69FE)),
                         child: Text(
                           'Review',
                           style: TextStyle(color: Colors.white),
@@ -202,7 +203,8 @@ class BookingCard extends StatelessWidget {
                         onPressed: () {
                           // Add logic for rescheduling the booking
                         },
-                        style: ElevatedButton.styleFrom(primary: Color(0xFF3E69FE)),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFF3E69FE)),
                         child: Text(
                           'Reschedule',
                           style: TextStyle(color: Colors.white),
@@ -220,7 +222,8 @@ class BookingCard extends StatelessWidget {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: Text('Delete Booking'),
-                                  content: Text('Are you sure you want to delete this booking?'),
+                                  content: Text(
+                                      'Are you sure you want to delete this booking?'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
@@ -230,7 +233,8 @@ class BookingCard extends StatelessWidget {
                                     ),
                                     TextButton(
                                       onPressed: () async {
-                                        await authProvider.deleteBooking(booking.id);
+                                        await authProvider
+                                            .deleteBooking(booking.id);
                                         Navigator.of(context).pop();
                                       },
                                       child: Text('Delete'),
@@ -308,7 +312,7 @@ class FeedbackForm extends StatelessWidget {
               // Close the modal bottom sheet
               Navigator.of(context).pop();
             },
-            style: ElevatedButton.styleFrom(primary: Color(0xFF3E69FE)),
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xFF3E69FE)),
             child: Text(
               'Submit Review',
               style: TextStyle(color: Colors.white),
